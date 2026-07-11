@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-site
+  namespace: default
+  labels:
+    app: hello-site
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-site
+  template:
+    metadata:
+      labels:
+        app: hello-site
+    spec:
+      containers:
+        - name: hello-site
+          image: hello-site:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80

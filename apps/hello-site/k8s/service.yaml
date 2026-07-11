@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-site
+  namespace: default
+spec:
+  selector:
+    app: hello-site
+  ports:
+    - port: 80
+      targetPort: 80

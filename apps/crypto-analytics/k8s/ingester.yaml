@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crypto-ingester
+  namespace: crypto-analytics
+  labels:
+    app: crypto-ingester
+spec:
+  # Must stay at 1: a second ingester would publish every trade twice.
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crypto-ingester
+  template:
+    metadata:
+      labels:
+        app: crypto-ingester
+    spec:
+      containers:
+        - name: ingester
+          image: ghcr.io/richardtan10176/crypto-ingester:latest
+          env:
+            - name: KAFKA_BROKER
+              value: kafka:9092
+            - name: KAFKA_TOPIC
+              value: trades
+            - name: BINANCE_WS_URL
+              value: wss://stream.binance.com:9443/ws/btcusdt@trade

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crypto-consumer
+  namespace: crypto-analytics
+  labels:
+    app: crypto-consumer
+spec:
+  # Must stay at 1: the trades topic has a single partition, so extra
+  # consumers in the group would sit idle.
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crypto-consumer
+  template:
+    metadata:
+      labels:
+        app: crypto-consumer
+    spec:
+      containers:
+        - name: consumer
+          image: ghcr.io/richardtan10176/crypto-consumer:latest
+          env:
+            - name: KAFKA_BROKER
+              value: kafka:9092
+            - name: KAFKA_TOPIC
+              value: trades
+            - name: TIMESCALE_DSN
+              valueFrom:
+                secretKeyRef:
+                  name: timescale-creds
+                  key: dsn

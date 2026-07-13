@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-site
+  name: landing
   namespace: default
   labels:
-    app: hello-site
+    app: landing
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-site
+      app: landing
   template:
     metadata:
       labels:
-        app: hello-site
+        app: landing
     spec:
       containers:
-        - name: hello-site
-          image: ghcr.io/richardtan10176/hello-site:latest
+        - name: landing
+          image: ghcr.io/richardtan10176/landing:latest
           ports:
             - containerPort: 80

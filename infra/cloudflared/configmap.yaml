@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cloudflared-config
+  namespace: cloudflared
+data:
+  config.yml: |
+    tunnel: 69ac0c90-22ae-44d6-bf2a-e65e0030c343
+    credentials-file: /etc/cloudflared/creds/credentials.json
+    ingress:
+      - hostname: "r-tan.dev"
+        service: http://traefik.kube-system.svc.cluster.local:80
+      - hostname: "*.r-tan.dev"
+        service: http://traefik.kube-system.svc.cluster.local:80
+      - service: http_status:404

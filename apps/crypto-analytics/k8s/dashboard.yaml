@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dashboard
-          image: ghcr.io/richardtan10176/crypto-dashboard:latest
+          image: ghcr.io/richardtan10176/crypto-dashboard:c3ecab715edc64438c4a6ce08caffeeaff9ca55f
           ports:
             - containerPort: 8080
           env:

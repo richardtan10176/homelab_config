@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: hello-site
-          image: ghcr.io/richardtan10176/hello-site:latest
+          image: ghcr.io/richardtan10176/hello-site:09062a8fa4342333d996b0187fff4a1351faedec
           ports:
             - containerPort: 80

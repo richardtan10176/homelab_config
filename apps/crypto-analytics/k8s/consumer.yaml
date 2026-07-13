@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: consumer
-          image: ghcr.io/richardtan10176/crypto-consumer:latest
+          image: ghcr.io/richardtan10176/crypto-consumer:aa5d10938fe97e848ec3526486d6c93f86b94f03
           env:
             - name: KAFKA_BROKER
               value: kafka:9092

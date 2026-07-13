@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: ingester
-          image: ghcr.io/richardtan10176/crypto-ingester:latest
+          image: ghcr.io/richardtan10176/crypto-ingester:aa5d10938fe97e848ec3526486d6c93f86b94f03
           env:
             - name: KAFKA_BROKER
               value: kafka:9092

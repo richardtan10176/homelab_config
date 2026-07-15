@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crypto-dashboard
+  namespace: crypto-analytics
+  labels:
+    app: crypto-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crypto-dashboard
+  template:
+    metadata:
+      labels:
+        app: crypto-dashboard
+    spec:
+      containers:
+        - name: dashboard
+          image: ghcr.io/richardtan10176/crypto-dashboard:2ef9fbe2cdde41bad1f001d22ac755ac93a9bb6d
+          ports:
+            - containerPort: 8080
+          env:
+            - name: TIMESCALE_DSN
+              valueFrom:
+                secretKeyRef:
+                  name: timescale-creds
+                  key: dsn
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: crypto-dashboard
+  namespace: crypto-analytics
+spec:
+  selector:
+    app: crypto-dashboard
+  ports:
+    - port: 80
+      targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: crypto-dashboard
+  namespace: crypto-analytics
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: crypto.r-tan.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: crypto-dashboard
+                port:
+                  number: 80

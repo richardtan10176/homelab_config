@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sgrep
+  namespace: sgrep
+  labels:
+    app: sgrep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sgrep
+  template:
+    metadata:
+      labels:
+        app: sgrep
+    spec:
+      containers:
+        - name: sgrep
+          image: ghcr.io/richardtan10176/sgrep:latest
+          ports:
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sgrep
+  namespace: sgrep
+spec:
+  selector:
+    app: sgrep
+  ports:
+    - port: 80
+      targetPort: 8000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sgrep
+  namespace: sgrep
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: sgrep.r-tan.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sgrep
+                port:
+                  number: 80

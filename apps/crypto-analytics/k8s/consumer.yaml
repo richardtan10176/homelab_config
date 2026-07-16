@@ -6,8 +6,9 @@ metadata:
   labels:
     app: crypto-consumer
 spec:
-  # Must stay at 1: the trades topic has a single partition, so extra
-  # consumers in the group would sit idle.
+  # Must stay at 1: the consumer binary spawns one goroutine per symbol
+  # internally (each with its own kafka.Reader in the "analytics" group), so
+  # a second replica would just contend for the same partitions.
   replicas: 1
   selector:
     matchLabels:
@@ -25,6 +26,8 @@ spec:
               value: kafka:9092
             - name: KAFKA_TOPIC
               value: trades
+            - name: SYMBOLS
+              value: BTCUSDT,ETHUSDT,SOLUSDT
             - name: TIMESCALE_DSN
               valueFrom:
                 secretKeyRef:

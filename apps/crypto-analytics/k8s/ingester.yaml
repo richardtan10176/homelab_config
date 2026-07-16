@@ -6,7 +6,8 @@ metadata:
   labels:
     app: crypto-ingester
 spec:
-  # Must stay at 1: a second ingester would publish every trade twice.
+  # Must stay at 1: the ingester binary spawns one goroutine per symbol
+  # internally, so a second replica would just publish every trade twice.
   replicas: 1
   selector:
     matchLabels:
@@ -24,5 +25,7 @@ spec:
               value: kafka:9092
             - name: KAFKA_TOPIC
               value: trades
-            - name: BINANCE_WS_URL
-              value: wss://stream.binance.com:9443/ws/btcusdt@trade
+            - name: BINANCE_WS_BASE_URL
+              value: wss://stream.binance.com:9443/ws
+            - name: SYMBOLS
+              value: BTCUSDT,ETHUSDT,SOLUSDT

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scheme-light-dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,96 +7,159 @@
   <meta name="description" content="Richard Tan — software engineer.">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <main>
-    <h1>Richard Tan</h1>
-    <!-- TODO: replace with your actual one-line role, e.g. "Backend engineer" -->
-    <p class="role">Software engineer</p>
-    <!-- TODO: replace with 2-3 sentences about what you build and what you care about -->
-    <p class="intro">
-      I build and run software end to end — from the code itself down to the
-      infrastructure it lives on. This site and everything linked from it runs on a
-      k3s cluster I maintain, deployed continuously from a Git repository.
-    </p>
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
+  <div class="mx-auto max-w-2xl px-6 py-20 sm:py-28">
+    <main>
 
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <h3><a href="https://crypto.r-tan.dev">crypto-analytics</a></h3>
-          <p class="note">
-            Market data ingestion pipeline feeding a TimescaleDB store, with a
-            dashboard over the top.
-          </p>
-        </li>
-        <li>
-          <h3><a href="https://sgrep.r-tan.dev">sgrep</a></h3>
-          <!-- TODO: replace with a real one-line description of sgrep -->
-          <p class="note">A search tool, self-hosted on the cluster.</p>
-        </li>
-        <li>
-          <h3><a href="https://hello.r-tan.dev">hello-site</a></h3>
-          <p class="note">A minimal service used to smoke-test the deployment path.</p>
-        </li>
-        <li>
-          <h3>
-            <a href="https://github.com/richardtan10176/homelab_config">homelab_config</a>
-          </h3>
-          <p class="note">
-            The GitOps repository behind all of the above — Kubernetes manifests,
-            Argo CD applications, and the CI that builds and ships each service.
-          </p>
-        </li>
-      </ul>
-    </section>
+      <!-- Hero -->
+      <header>
+        <h1 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">
+          Richard Tan
+        </h1>
+        <!-- TODO: replace with your actual one-line role, e.g. "Backend engineer" -->
+        <p class="mt-1 text-slate-500 dark:text-slate-400">Software engineer</p>
+        <!-- TODO: replace with 2-3 sentences about what you build and what you care about -->
+        <p class="mt-6 leading-relaxed text-slate-600 dark:text-slate-300">
+          I build and run software end to end — from the code itself down to the
+          infrastructure it lives on. This site and everything linked from it runs on a
+          k3s cluster I maintain, deployed continuously from a Git repository.
+        </p>
+      </header>
 
-    <section>
-      <h2>Experience</h2>
-      <ul>
-        <!-- TODO: replace this entry with a real role. Duplicate the <li> for each one. -->
-        <li>
-          <h3>Job title <span class="todo">— Company</span></h3>
-          <p class="meta">2023 &ndash; Present</p>
-          <p class="note todo">
-            One or two lines on what you worked on and what it achieved.
-          </p>
-        </li>
-        <!-- TODO: add earlier roles here -->
-        <li>
-          <h3>Earlier job title <span class="todo">— Company</span></h3>
-          <p class="meta">2021 &ndash; 2023</p>
-          <p class="note todo">
-            One or two lines on what you worked on and what it achieved.
-          </p>
-        </li>
-      </ul>
-    </section>
+      <!-- Projects -->
+      <section class="mt-16">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
+          Projects
+        </h2>
+        <ul class="mt-6 space-y-6">
+          <li class="group">
+            <a href="https://crypto.r-tan.dev"
+               class="font-medium text-slate-900 underline-offset-4 transition-colors group-hover:text-sky-600 hover:underline dark:text-white dark:group-hover:text-sky-400">
+              crypto-analytics
+            </a>
+            <p class="mt-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+              Market data ingestion pipeline feeding a TimescaleDB store, with a
+              dashboard over the top.
+            </p>
+          </li>
+          <li class="group">
+            <a href="https://sgrep.r-tan.dev"
+               class="font-medium text-slate-900 underline-offset-4 transition-colors group-hover:text-sky-600 hover:underline dark:text-white dark:group-hover:text-sky-400">
+              sgrep
+            </a>
+            <!-- TODO: replace with a real one-line description of sgrep -->
+            <p class="mt-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+              A search tool, self-hosted on the cluster.
+            </p>
+          </li>
+          <li class="group">
+            <a href="https://hello.r-tan.dev"
+               class="font-medium text-slate-900 underline-offset-4 transition-colors group-hover:text-sky-600 hover:underline dark:text-white dark:group-hover:text-sky-400">
+              hello-site
+            </a>
+            <p class="mt-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+              A minimal service used to smoke-test the deployment path.
+            </p>
+          </li>
+          <li class="group">
+            <a href="https://github.com/richardtan10176/homelab_config"
+               class="font-medium text-slate-900 underline-offset-4 transition-colors group-hover:text-sky-600 hover:underline dark:text-white dark:group-hover:text-sky-400">
+              homelab_config
+            </a>
+            <p class="mt-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+              The GitOps repository behind all of the above — Kubernetes manifests,
+              Argo CD applications, and the CI that builds and ships each service.
+            </p>
+          </li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Skills</h2>
-      <!-- TODO: replace with your actual languages, tools, and platforms -->
-      <p class="todo">
-        Language, Language, Language · Framework, Framework · Kubernetes, Docker,
-        Argo CD · PostgreSQL, TimescaleDB · Linux, Git, GitHub Actions
+      <!-- Experience -->
+      <section class="mt-16">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
+          Experience
+        </h2>
+        <ul class="mt-6 space-y-8">
+          <!-- TODO: replace this entry with a real role. Duplicate the <li> for each one. -->
+          <li>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="font-medium text-slate-900 dark:text-white">
+                Job title <span class="text-slate-400 dark:text-slate-500">— Company</span>
+              </h3>
+              <p class="font-mono text-xs text-slate-400 dark:text-slate-500">2023 — Present</p>
+            </div>
+            <p class="mt-1 text-sm italic leading-relaxed text-slate-500 dark:text-slate-400">
+              One or two lines on what you worked on and what it achieved.
+            </p>
+          </li>
+          <!-- TODO: add earlier roles here -->
+          <li>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="font-medium text-slate-900 dark:text-white">
+                Earlier job title <span class="text-slate-400 dark:text-slate-500">— Company</span>
+              </h3>
+              <p class="font-mono text-xs text-slate-400 dark:text-slate-500">2021 — 2023</p>
+            </div>
+            <p class="mt-1 text-sm italic leading-relaxed text-slate-500 dark:text-slate-400">
+              One or two lines on what you worked on and what it achieved.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Skills -->
+      <section class="mt-16">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
+          Skills
+        </h2>
+        <!-- TODO: replace these with your actual languages, tools, and platforms -->
+        <ul class="mt-6 flex flex-wrap gap-2">
+          <li class="rounded-md border border-slate-200 px-2.5 py-1 text-sm italic text-slate-500 dark:border-slate-800 dark:text-slate-400">Language</li>
+          <li class="rounded-md border border-slate-200 px-2.5 py-1 text-sm italic text-slate-500 dark:border-slate-800 dark:text-slate-400">Framework</li>
+          <li class="rounded-md border border-slate-200 px-2.5 py-1 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300">Kubernetes</li>
+          <li class="rounded-md border border-slate-200 px-2.5 py-1 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300">Docker</li>
+          <li class="rounded-md border border-slate-200 px-2.5 py-1 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300">Argo CD</li>
+          <li class="rounded-md border border-slate-200 px-2.5 py-1 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300">PostgreSQL</li>
+          <li class="rounded-md border border-slate-200 px-2.5 py-1 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300">Linux</li>
+          <li class="rounded-md border border-slate-200 px-2.5 py-1 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300">Git</li>
+          <li class="rounded-md border border-slate-200 px-2.5 py-1 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300">GitHub Actions</li>
+        </ul>
+      </section>
+
+      <!-- Contact -->
+      <section class="mt-16">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
+          Contact
+        </h2>
+        <ul class="mt-6 space-y-2">
+          <li>
+            <a href="https://github.com/richardtan10176"
+               class="text-sky-600 underline-offset-4 transition hover:underline dark:text-sky-400">GitHub</a>
+          </li>
+          <!-- TODO: replace with the email address you want published -->
+          <li>
+            <a href="mailto:you@example.com"
+               class="italic text-sky-600 underline-offset-4 transition hover:underline dark:text-sky-400">Email</a>
+          </li>
+          <!-- TODO: replace with your LinkedIn profile URL -->
+          <li>
+            <a href="https://www.linkedin.com/in/your-profile"
+               class="italic text-sky-600 underline-offset-4 transition hover:underline dark:text-sky-400">LinkedIn</a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer class="mt-20 border-t border-slate-200 pt-6 text-sm text-slate-400 dark:border-slate-800 dark:text-slate-500">
+      <p>
+        &copy; 2026 Richard Tan
+        <span class="px-1.5" aria-hidden="true">&middot;</span>
+        <a href="/privacy/" class="underline-offset-4 transition-colors hover:text-slate-700 hover:underline dark:hover:text-slate-300">Privacy</a>
+        <span class="px-1.5" aria-hidden="true">&middot;</span>
+        <a href="/terms/" class="underline-offset-4 transition-colors hover:text-slate-700 hover:underline dark:hover:text-slate-300">Terms</a>
       </p>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <ul>
-        <li><a href="https://github.com/richardtan10176">GitHub</a></li>
-        <!-- TODO: replace with the email address you want published -->
-        <li><a href="mailto:you@example.com" class="todo">Email</a></li>
-        <!-- TODO: replace with your LinkedIn profile URL -->
-        <li><a href="https://www.linkedin.com/in/your-profile" class="todo">LinkedIn</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2026 Richard Tan
-    <span class="sep">&middot;</span><a href="/privacy/">Privacy</a>
-    <span class="sep">&middot;</span><a href="/terms/">Terms</a>
-  </footer>
+    </footer>
+  </div>
 </body>
 </html>

@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - "apps/landing/html/**"
+      - "apps/landing/src/**"
+      - "apps/landing/package.json"
+      - "apps/landing/package-lock.json"
       - "apps/landing/Dockerfile"
       - ".github/workflows/build-landing.yml"
   workflow_dispatch: {}

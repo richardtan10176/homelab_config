@@ -3,16 +3,100 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Richard's Homelab</title>
+  <title>Richard Tan</title>
+  <meta name="description" content="Richard Tan — software engineer.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main>
-    <h1>Richard's Homelab</h1>
-    <p>Projects running on this cluster:</p>
-    <ul>
-      <li><a href="https://hello.r-tan.dev">hello-site</a></li>
-    </ul>
+    <h1>Richard Tan</h1>
+    <!-- TODO: replace with your actual one-line role, e.g. "Backend engineer" -->
+    <p class="role">Software engineer</p>
+    <!-- TODO: replace with 2-3 sentences about what you build and what you care about -->
+    <p class="intro">
+      I build and run software end to end — from the code itself down to the
+      infrastructure it lives on. This site and everything linked from it runs on a
+      k3s cluster I maintain, deployed continuously from a Git repository.
+    </p>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <h3><a href="https://crypto.r-tan.dev">crypto-analytics</a></h3>
+          <p class="note">
+            Market data ingestion pipeline feeding a TimescaleDB store, with a
+            dashboard over the top.
+          </p>
+        </li>
+        <li>
+          <h3><a href="https://sgrep.r-tan.dev">sgrep</a></h3>
+          <!-- TODO: replace with a real one-line description of sgrep -->
+          <p class="note">A search tool, self-hosted on the cluster.</p>
+        </li>
+        <li>
+          <h3><a href="https://hello.r-tan.dev">hello-site</a></h3>
+          <p class="note">A minimal service used to smoke-test the deployment path.</p>
+        </li>
+        <li>
+          <h3>
+            <a href="https://github.com/richardtan10176/homelab_config">homelab_config</a>
+          </h3>
+          <p class="note">
+            The GitOps repository behind all of the above — Kubernetes manifests,
+            Argo CD applications, and the CI that builds and ships each service.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <ul>
+        <!-- TODO: replace this entry with a real role. Duplicate the <li> for each one. -->
+        <li>
+          <h3>Job title <span class="todo">— Company</span></h3>
+          <p class="meta">2023 &ndash; Present</p>
+          <p class="note todo">
+            One or two lines on what you worked on and what it achieved.
+          </p>
+        </li>
+        <!-- TODO: add earlier roles here -->
+        <li>
+          <h3>Earlier job title <span class="todo">— Company</span></h3>
+          <p class="meta">2021 &ndash; 2023</p>
+          <p class="note todo">
+            One or two lines on what you worked on and what it achieved.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <!-- TODO: replace with your actual languages, tools, and platforms -->
+      <p class="todo">
+        Language, Language, Language · Framework, Framework · Kubernetes, Docker,
+        Argo CD · PostgreSQL, TimescaleDB · Linux, Git, GitHub Actions
+      </p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="https://github.com/richardtan10176">GitHub</a></li>
+        <!-- TODO: replace with the email address you want published -->
+        <li><a href="mailto:you@example.com" class="todo">Email</a></li>
+        <!-- TODO: replace with your LinkedIn profile URL -->
+        <li><a href="https://www.linkedin.com/in/your-profile" class="todo">LinkedIn</a></li>
+      </ul>
+    </section>
   </main>
+
+  <footer>
+    &copy; 2026 Richard Tan
+    <span class="sep">&middot;</span><a href="/privacy/">Privacy</a>
+    <span class="sep">&middot;</span><a href="/terms/">Terms</a>
+  </footer>
 </body>
 </html>

@@ -3,6 +3,10 @@ kind: Application
 metadata:
   name: hello-site
   namespace: argocd
+  # Ensures Argo CD cascade-deletes this app's Deployment/Service/Ingress when the
+  # Application is removed, rather than orphaning them in the default namespace.
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:

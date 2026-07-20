@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: landing
-          image: ghcr.io/richardtan10176/landing:4d25fa15f5c16d7dd56224658269ed7cfe71aef7
+          image: ghcr.io/richardtan10176/landing:bcbf654a324aac5335b77cb836e31905f78b960c
           ports:
             - containerPort: 80

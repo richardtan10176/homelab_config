@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: sgrep
-          image: ghcr.io/richardtan10176/sgrep:2816a3da93febe7663845fe46fc3a33dba53adfc
+          image: ghcr.io/richardtan10176/sgrep:6832f39cc0c595514e2feea7dfcce56766a56d67
           ports:
             - containerPort: 8000
 ---
